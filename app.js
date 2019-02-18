@@ -38,7 +38,6 @@ app.post('/webhook', (req, res) => {
       console.log(webhook_event);
       
       let sender_psid = webhook_event.sender.id;
-      //console.log('Sender PSID: ' + sender_psid);
 
       if (webhook_event.message) {
         handleMessage(sender_psid, webhook_event.message)
@@ -140,7 +139,6 @@ function handlePostback(sender_psid, received_postback) {
 }
 
 function callSendAPI(sender_psid, response) {
-  // Construct the message body
   let request_body = {
     "recipient": {
       "id": sender_psid
@@ -148,7 +146,6 @@ function callSendAPI(sender_psid, response) {
     "message": response
   }
 
-  // Send the HTTP request to the Messenger Platform
   request({
     "uri": "https://graph.facebook.com/v2.6/me/messages",
     "qs": { "access_token": PAGE_ACCESS_TOKEN },

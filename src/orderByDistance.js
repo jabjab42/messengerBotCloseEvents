@@ -1,6 +1,6 @@
 module.exports = {
 
-getDistance: function (pointA, pointB){
+getDistance: function (pointA, pointB) {
   
   let p = 0.017453292519943295
   let c = Math.cos

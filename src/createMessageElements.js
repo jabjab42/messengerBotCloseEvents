@@ -1,6 +1,6 @@
 module.exports = {
 
-createMessageElements: function (orderedByDistanceObject) {
+createMessageElements: (orderedByDistanceObject) => {
   
   let elements
   const objectElements = Object.keys(orderedByDistanceObject).map(index => {
@@ -15,11 +15,9 @@ createMessageElements: function (orderedByDistanceObject) {
       "type": "web_url", 
       "url": orderedByDistanceObject[index].url,
       "webview_height_ratio": "tall"}
-    //console.log(JSON.stringify(messageElements))
     
     return messageElements
   })
-//console.log(messageElements)
 return objectElements
 }}
 
